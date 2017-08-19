@@ -10,7 +10,7 @@
 /build
 
 #public/data
-/public/data
+#/public/data
 
 # misc
 .DS_Store

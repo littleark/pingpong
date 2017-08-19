@@ -1,0 +1,50 @@
+{
+  "users":[
+    {
+      "user":"carlo",
+      "connections":[
+        {
+          "user":"vasu",
+          "messages": [
+            {
+              "id":"cfcd208495d565ef66e7dff9f98764da",
+              "timestamp":1503151463249,
+              "createdBy":"carlo",
+              "assignedTo":"vasu",
+              "body":{
+                "text":"Ciao ciao"
+              }
+            },
+            {
+              "id":"c4ca4238a0b923820dcc509a6f75849b",
+              "timestamp":1503151507184,
+              "createdBy":"vasu",
+              "assignedTo":"carlo",
+              "body":{
+                "text":"Hi hi"
+              }
+            },
+            {
+              "id":"c81e728d9d4c2f636f067f89cc14862c",
+              "timestamp":1503151952487,
+              "createdBy":"carlo",
+              "assignedTo":"vasu",
+              "body":{
+                "text":"Get milk"
+              }
+            },
+            {
+              "id":"eccbc87e4b5ce2fe28308fd9f2a7baf3",
+              "timestamp":1503151971216,
+              "createdBy":"carlo",
+              "assignedTo":"carlo",
+              "body":{
+                "text":"Get bananas"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
