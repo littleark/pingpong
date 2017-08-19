@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Measure, withContentRect} from 'react-measure'
 import { connect } from 'react-redux'
 import * as actions from './actions'
 
