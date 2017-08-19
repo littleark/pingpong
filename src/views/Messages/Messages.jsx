@@ -10,7 +10,7 @@ const Messages = (props) => {
 
   const messages = props.messages.map(message => {
 
-     return <Message key={message.id} {...message} user={props.user} connection={props.connection}  assignTask={props.assignTask}/>
+     return <Message key={message.id} {...message} user={props.user} connection={props.connection}  changeAssignedUser={props.changeAssignedUser}/>
   })
 
   return <div className="messages-view">

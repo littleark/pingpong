@@ -8,11 +8,11 @@ const Message = (props) => {
   const swipingLeft = (e, absX) => {
     //console.log("You're Swiping to the Left...", e, absX)
     //console.log("THIS",props)
-    props.assignTask(props.id, props.user)
+    props.changeAssignedUser(props, props.user)
   }
   const swipingRight = (e, absX) => {
     //console.log("You're Swiping to the Right...", e, absX)
-    props.assignTask(props.id, props.connection)
+    props.changeAssignedUser(props, props.connection)
   }
 
   let assignedTo = props.assignedTo === props.user ? 'aligned-left' : 'aligned-right'
