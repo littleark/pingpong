@@ -1,0 +1,51 @@
+.messages-view {
+
+  .messages-header {
+    height: 30px;
+    border-bottom: 1px solid #ddd;
+
+    .name-header {
+      line-height: 30px;
+      width: 49%;
+      text-align: center;
+    }
+    .user-header {
+      float:left;
+    }
+    .connection-header {
+      float: right;
+    }
+
+
+  }
+
+  .messages {
+    margin-top: 10px;
+    .message {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      min-height: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      > div {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: calc(50% - 10px);
+        background: #ddd;
+        border-radius: 5px;
+        padding:5px;
+
+        &.aligned-left {
+          left: 0;
+        }
+        &.aligned-right {
+          right: 0;
+        }
+      }
+    }
+  }
+
+
+}

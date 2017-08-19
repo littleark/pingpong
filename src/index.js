@@ -33,7 +33,10 @@ const enhancer = composeEnhancers(
 
 const store = createStore(mainReducer, enhancer);
 
-const timestamps = {endTs: 1497592800000, startTs:1497474000000}
+const now = +new Date()
+const days = 10
+const day = 60 * 60 * 24 * 1000
+const timestamps = {endTs: now, startTs: now - 10 * day}
 
 store.dispatch(selectTimestamps(timestamps))
 

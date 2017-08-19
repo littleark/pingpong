@@ -9,6 +9,36 @@ export function selectTimestamps(timestamps) {
   }
 }
 
+export const SELECT_USER = 'SELECT_USER'
+
+export function selectUser(user) {
+  return {
+    type: SELECT_USER,
+    user
+  }
+}
+
+export const SELECT_CONNECTION = 'SELECT_CONNECTION'
+
+export function selectConnection(user) {
+  return {
+    type: SELECT_CONNECTION,
+    user
+  }
+}
+
+export const ASSIGN_TASK = 'ASSIGN_TASK'
+
+export function assignTask(id,user) {
+  return {
+    type: ASSIGN_TASK,
+    id,
+    user
+  }
+}
+
+
+
 export const REQUEST_DATA = 'REQUEST_DATA'
 function requestData (timestamps) {
   return {
@@ -47,7 +77,7 @@ export function fetchData(timestamps) {
 
     //return fetch(`https://www.reddit.com/r/reactjs.json`)
 
-    return fetch(process.env.PUBLIC_URL + '/data/Events1.json')
+    return fetch(process.env.PUBLIC_URL + '/data/messages.json')
       .then(
         response => response.json(),
         // Do not use catch, because that will also catch
