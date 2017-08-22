@@ -1,33 +1,52 @@
-.messages-view .messages-header {
-  height: 30px;
-  border-bottom: 1px solid #ddd; }
-  .messages-view .messages-header .name-header {
-    line-height: 30px;
-    width: 49%;
-    text-align: center; }
-  .messages-view .messages-header .user-header {
-    float: left; }
-  .messages-view .messages-header .connection-header {
-    float: right; }
-
-.messages-view .messages {
-  margin-top: 10px; }
-  .messages-view .messages .message {
-    width: 100%;
-    position: relative;
+.messages-view {
+  height: 100vh; }
+  .messages-view .messages-header {
+    height: 30px;
+    border-bottom: 1px solid #ddd; }
+    .messages-view .messages-header .name-header {
+      line-height: 30px;
+      width: 49%;
+      text-align: center; }
+    .messages-view .messages-header .user-header {
+      float: left; }
+    .messages-view .messages-header .connection-header {
+      float: right; }
+  .messages-view .messages {
+    height: calc(100vh - 80px);
     overflow: hidden;
-    min-height: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px; }
-    .messages-view .messages .message > div {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: calc(50% - 10px);
-      background: #ddd;
-      border-radius: 5px;
-      padding: 5px; }
-      .messages-view .messages .message > div.aligned-left {
-        left: 0; }
-      .messages-view .messages .message > div.aligned-right {
-        right: 0; }
+    overflow-y: scroll; }
+    .messages-view .messages .message {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      min-height: 50px; }
+      .messages-view .messages .message > div {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        width: calc(50% - 10px);
+        background: #ddd;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 10px 0;
+        transition: margin-left 200ms; }
+        .messages-view .messages .message > div.aligned-left {
+          margin-left: 0; }
+        .messages-view .messages .message > div.aligned-right {
+          margin-left: calc(50%); }
+  .messages-view .add-button {
+    height: 50px; }
+    .messages-view .add-button button {
+      border: 0;
+      padding: 0;
+      display: block;
+      margin: 0 auto;
+      width: 46px;
+      height: 46px;
+      text-align: center;
+      line-height: 46px;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: #339933;
+      color: #fff; }

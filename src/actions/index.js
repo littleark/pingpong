@@ -28,6 +28,7 @@ export function selectConnection(user) {
   }
 }
 
+//JUST FOR ui.js
 export const ASSIGN_TASK = 'ASSIGN_TASK'
 export function assignTask(id,user) {
   return {
@@ -37,7 +38,13 @@ export function assignTask(id,user) {
   }
 }
 
-
+export const ADD_TASK = 'ADD_TASK'
+export function addTask(user) {
+  return {
+    type: ADD_TASK,
+    user
+  }
+}
 
 export const REQUEST_DATA = 'REQUEST_DATA'
 function requestData (timestamps) {
@@ -97,6 +104,8 @@ export function fetchData(timestamps) {
   }
 }
 
+
+// Watch listeners
 export function watchMessageChangedEvent(dispatch) {
   database.ref('/messages').on('child_changed', (snap) => {
     console.log("CHILD CHANGED")
@@ -112,21 +121,62 @@ function getMessageChangedAction(message) {
   }
 }
 
-export function changeAssignedUser(message, user) {
-  console.log("changeAssignedUser",message,{...message})
-  const {body, createdBy, id, timestamp} = message
-  return dispatch => {
-    database.ref('messages/' + message.fbKey).set({
-        body,
-        createdBy,
-        id,
-        timestamp,
-        assignedTo: user
-    }).then(function() {
-
-    })
-    dispatch(assignTask(message.id, user))
+export function watchMessageAddedEvent(dispatch) {
+  database.ref('/messages').limitToLast(100).on('child_added', (snap) => {
+    console.log("watchMessageAddedEvent")
+    //console.log(snap.val())
+    dispatch(getMessageAddedAction(snap.key, snap.val()))
+  })
+}
+export const GET_MESSAGE_ADDED = 'GET_MESSAGE_ADDED'
+function getMessageAddedAction(key, message) {
+  console.log("getMessageAddedAction", key, message)
+  return {
+    type: GET_MESSAGE_ADDED,
+    key,
+    message
   }
+}
+
+export function changeAssignedUser(message, user) {
+  console.log("changeAssignedUser",message)
+  const {body, createdBy, id, timestamp} = message
+
+  let postData = {
+      body: body,
+      createdBy,
+      id,
+      timestamp,
+      assignedTo: user
+  }
+
+  var updates = {};
+  updates['/messages/' + message.fbKey] = postData;
+
+  return dispatch => {
+    database.ref().update(updates)
+  }
+}
+
+export function addNewTask(task) {
+
+
+
+  let newPostKey = database.ref().child('messages').push().key
+
+  console.log("newPostKey", newPostKey)
+
+  let postData = task
+  postData.id = newPostKey
+
+  var updates = {}
+  updates['/messages/' + newPostKey] = postData
+
+  return dispatch => {
+      dispatch(getMessageAddedAction(newPostKey, postData))
+      return database.ref().update(updates)
+  }
+
 }
 
 export function getMessages() {

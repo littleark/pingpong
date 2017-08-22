@@ -1,7 +1,9 @@
+$header-height: 30px;
+$menu-height: 50px;
 .messages-view {
-
+  height: 100vh;
   .messages-header {
-    height: 30px;
+    height: $header-height;
     border-bottom: 1px solid #ddd;
 
     .name-header {
@@ -20,32 +22,55 @@
   }
 
   .messages {
-    margin-top: 10px;
+    height: calc(100vh - #{$header-height + $menu-height});
+    overflow: hidden;
+    overflow-y: scroll;
     .message {
       width: 100%;
       position: relative;
       overflow: hidden;
-      min-height: 30px;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      min-height: 50px;
+      //margin-top: 10px;
+      //margin-bottom: 10px;
       > div {
-        position: absolute;
+        position: relative;
         top: 0;
         bottom: 0;
         width: calc(50% - 10px);
         background: #ddd;
         border-radius: 5px;
         padding:5px;
+        margin:10px 0;
+
+        transition: margin-left 200ms;
 
         &.aligned-left {
-          left: 0;
+          margin-left: 0;
         }
         &.aligned-right {
-          right: 0;
+          margin-left: calc(50%);
         }
       }
     }
   }
 
+  .add-button {
+    height: $menu-height;
+    button {
+      border: 0;
+      padding: 0;
+      display: block;
+      margin:0 auto;
+      width: 46px;
+      height: 46px;
+      text-align: center;
+      line-height: 46px;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: #339933;
+      color: #fff;
+    }
+  }
 
 }

@@ -10,8 +10,12 @@ const Messages = (props) => {
 
   const messages = props.messages.map(message => {
 
-     return <Message key={message.id} {...message} user={props.user} connection={props.connection}  changeAssignedUser={props.changeAssignedUser}/>
+     return <Message key={message.id} {...message} user={props.user} connection={props.connection}  changeAssignedUser={props.changeAssignedUser} />
   })
+
+  const addTask = (e) => {
+    props.addTask(props.user)
+  }
 
   return <div className="messages-view">
     <div className="messages-header">
@@ -20,6 +24,9 @@ const Messages = (props) => {
     </div>
     <div className="messages">
       {messages}
+    </div>
+    <div className="add-button">
+      <button onClick={addTask}>+</button>
     </div>
   </div>
 

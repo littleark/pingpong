@@ -1,0 +1,47 @@
+.add-task-view {
+    position: absolute;
+    width:100%;
+    height: 100vh;
+    top: 100vh;
+    z-index: 9999;
+    background-color: #fff;
+
+    transition: top 500ms;
+
+    &.visible {
+      top: 0px;
+    }
+
+    form {
+      p {
+        padding: 10px;
+      }
+      label {
+        display: block;
+        width: calc(100% - 20px);
+        padding: 0px;
+      }
+
+      textarea {
+        width:100%;
+        border:1px solid #bdbdbd;
+        height: 50vh;
+        font-size: 13px;
+      }
+      input[type='date'] {
+        border:1px solid #bdbdbd;
+        width: 100%;
+        display: block;
+        font-size: 13px;
+      }
+      button[type='submit'] {
+        font-size: 13px;
+        text-align: center;
+        border: 0;
+        background: none;
+        box-shadow:none;
+        border-radius: 0px;
+        background-color: #bdbdbd;
+      }
+    }
+}

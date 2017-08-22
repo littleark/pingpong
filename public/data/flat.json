@@ -1,47 +1,47 @@
-{"messages":[
-  {
-    "id":"cfcd208495d565ef66e7dff9f98764da",
-    "timestamp":1503151463249,
+{
+  "-Ks3Qg2QHbHpygzWA7RP": {
+    "id":"-Ks3Qg2QHbHpygzWA7RP",
+    "timestamp":1503154800000,
     "createdBy":"carlo",
     "assignedTo":"vasu",
     "body":{
-      "text":"Ciao ciao"
+      "text":"Don't forget to call the home office to ask what's happening with our applications"
     }
   },
-  {
-    "id":"c4ca4238a0b923820dcc509a6f75849b",
-    "timestamp":1503151507184,
+  "-Ks4-Zj8K-ARarQxbXBO": {
+    "id":"-Ks4-Zj8K-ARarQxbXBO",
+    "timestamp":1503248400000,
     "createdBy":"vasu",
     "assignedTo":"carlo",
     "body":{
       "text":"Hi hi"
     }
   },
-  {
-    "id":"c81e728d9d4c2f636f067f89cc14862c",
-    "timestamp":1503151952487,
+  "-Ks40ACBS4KeEOqKfLR8": {
+    "id":"-Ks40ACBS4KeEOqKfLR8",
+    "timestamp":1503266400000,
     "createdBy":"carlo",
     "assignedTo":"vasu",
     "body":{
       "text":"Get milk"
     }
   },
-  {
-    "id":"eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "timestamp":1503151971216,
+  "-Ks40AZMP73uZj0hmG3I": {
+    "id":"-Ks40AZMP73uZj0hmG3I",
+    "timestamp":1503320400000,
     "createdBy":"carlo",
     "assignedTo":"carlo",
     "body":{
       "text":"Get bananas"
     }
   },
-  {
-    "id":"a87ff679a2f3e71d9181a67b7542122c",
-    "timestamp":1503151971216,
+  "-Ks40AfPpFnHdSuStJVD": {
+    "id":"-Ks40AfPpFnHdSuStJVD",
+    "timestamp":1503327600000,
     "createdBy":"carlo",
     "assignedTo":"carlo",
     "body":{
       "text":"Call Home Office"
     }
   }
-]}
+}

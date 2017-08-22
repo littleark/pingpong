@@ -2,8 +2,9 @@ import {
   GET_MESSAGES_REQUESTED,
   GET_MESSAGES_REJECTED,
   GET_MESSAGES_FULFILLED,
-  ASSIGN_TASK,
-  GET_MESSAGE_CHANGED
+  ADD_TASK,
+  GET_MESSAGE_CHANGED,
+  GET_MESSAGE_ADDED
 } from '../actions'
 
 function assignTask(messages, action) {
@@ -35,6 +36,19 @@ function updateTask(messages, action) {
   }
 }
 
+function addTask(messages = [], action) {
+  console.log("ADD A TASK", messages, action)
+  const newMessages = messages
+
+  if(!newMessages.find(d => d.fbKey === action.key)) {
+    newMessages.push({'fbKey':action.key, ...action.message})
+  }
+
+  return {
+    'messages': newMessages
+  }
+}
+
 const firebaseReducer = (state = [], action) => {
   switch (action.type) {
     // case 'INITIALIZE':
@@ -60,15 +74,24 @@ const firebaseReducer = (state = [], action) => {
         messages: action.messages
       })
       return newState
-    case ASSIGN_TASK:
+    case ADD_TASK:
+      alert("ADD_TASK")
+      return state
       return Object.assign({}, state, {
-        ...assignTask(state.messages, action)
+        ...addTask(state.messages, action),
+        lastUpdated: new Date()
+      })
+    case GET_MESSAGE_ADDED:
+      return Object.assign({}, state, {
+        ...addTask(state.messages, action),
+        lastUpdated: new Date()
       })
     case GET_MESSAGE_CHANGED:
       return Object.assign({}, state, {
         ...updateTask(state.messages, action),
         lastUpdated: new Date()
       })
+
     default:
       return state
   }
