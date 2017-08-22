@@ -5,6 +5,8 @@ import * as actions from './actions'
 import Messages from './views/Messages'
 import AddTask from './views/AddTask'
 
+import './App.css'
+
 const mapStateToProps = state => {
   console.log("-------------->", state)
   const { user, connection, data } = state.ui
@@ -82,9 +84,9 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
+      <div className="App pingpong">
         <Messages user={this.props.user} connection={this.props.connection} messages={this.props.messages} changeAssignedUser={this.props.changeAssignedUser} addTask={this.showTaskView.bind(this)}/>
-        <AddTask status={this.state.addTaskStatus} user={this.props.user} connection={this.props.connection} addTask={this.addNewTask.bind(this)}/>
+        <AddTask status={this.state.addTaskStatus} user={this.props.user} connection={this.props.connection} addTask={this.addNewTask.bind(this)} closeTask={this.hideTaskView.bind(this)}/>
       </div>
     );
   }

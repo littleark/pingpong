@@ -6,14 +6,34 @@
   z-index: 9999;
   background-color: #fff;
   transition: top 500ms; }
+  .add-task-view h1 {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    margin: 0;
+    padding: 10px; }
   .add-task-view.visible {
     top: 0px; }
+  .add-task-view .close-add-task {
+    display: block;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px; }
   .add-task-view form p {
     padding: 10px; }
   .add-task-view form label {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
     display: block;
     width: calc(100% - 20px);
     padding: 0px; }
+  .add-task-view form input, .add-task-view form textarea {
+    font-family: 'Heebo', sans-serif;
+    font-size: light;
+    font-weight: 300; }
   .add-task-view form textarea {
     width: 100%;
     border: 1px solid #bdbdbd;
@@ -25,10 +45,16 @@
     display: block;
     font-size: 13px; }
   .add-task-view form button[type='submit'] {
-    font-size: 13px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
     text-align: center;
     border: 0;
     background: none;
     box-shadow: none;
     border-radius: 0px;
-    background-color: #bdbdbd; }
+    border: 2px solid #bdbdbd;
+    border-radius: 10px;
+    width: 33%; }
+  .add-task-view .t-c {
+    text-align: center; }

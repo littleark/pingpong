@@ -122,7 +122,7 @@ function getMessageChangedAction(message) {
 }
 
 export function watchMessageAddedEvent(dispatch) {
-  database.ref('/messages').limitToLast(100).on('child_added', (snap) => {
+  database.ref('/messages').limitToLast(100).orderByChild('timestamp').on('child_added', (snap) => {
     console.log("watchMessageAddedEvent")
     //console.log(snap.val())
     dispatch(getMessageAddedAction(snap.key, snap.val()))

@@ -8,20 +8,42 @@
 
     transition: top 500ms;
 
+    h1 {
+      font-family: 'Heebo', sans-serif;
+      font-weight: 100;
+      font-size: 18px;
+      margin: 0;
+      padding: 10px;
+    }
+
     &.visible {
       top: 0px;
     }
-
+    .close-add-task {
+      display: block;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 100;
+      font-size: 20px;
+      position: absolute;
+      right: 10px;
+      top:10px;
+    }
     form {
       p {
         padding: 10px;
       }
       label {
+        font-family: 'Heebo', sans-serif;
+        font-weight: 300;
         display: block;
         width: calc(100% - 20px);
         padding: 0px;
       }
-
+      input, textarea {
+        font-family: 'Heebo', sans-serif;
+        font-size: light;
+        font-weight: 300;
+      }
       textarea {
         width:100%;
         border:1px solid #bdbdbd;
@@ -35,13 +57,20 @@
         font-size: 13px;
       }
       button[type='submit'] {
-        font-size: 13px;
+        font-family: 'Heebo', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
         text-align: center;
         border: 0;
         background: none;
         box-shadow:none;
         border-radius: 0px;
-        background-color: #bdbdbd;
+        border:2px solid #bdbdbd;
+        border-radius: 10px;
+        width:33%;
       }
+    }
+    .t-c {
+      text-align: center;
     }
 }
